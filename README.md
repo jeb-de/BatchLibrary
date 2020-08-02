@@ -1,7 +1,7 @@
 # BatchLibrary
 Library system for windows batch files using batch macros
 
-# Sample batch file, using macros from libString
+### Sample batch file, using macros from libString
 ```
 @echo off
 setlocal EnableDelayedExpansion
