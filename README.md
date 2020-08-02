@@ -2,6 +2,7 @@
 Library system for windows batch files using batch macros
 
 # Sample batch file, using macros from libString
+```
 @echo off
 setlocal EnableDelayedExpansion
 
@@ -16,3 +17,4 @@ echo The length is %resultLen%
 set "myString2=   ;hi*?><&  "
 %$trim% myString trimmedStr
 echo Trimmed string is '!trimmedStr!'
+```
