@@ -1,0 +1,3 @@
+# .cmd and .bat files will always have CRLF line endings on checkout.
+*.bat text eol=crlf
+*.cmd text eol=crlf
