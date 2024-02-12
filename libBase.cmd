@@ -236,7 +236,11 @@ set "$FOR=%%%%~$=_F1_FOR-variable_DOLLAR_is_required_while_MACRO_DEFINITION_=:$p
 set "$FOR-SAFE=%%%%~$=_f2_FOR-variable_DOLLAR_is_required_while_MACRO_DEFINITION_=:$param%%%%~$==:$%$PERCENT%~$=_FOR-variable-SAFE_DOLLAR_is_required_IN_MACRO-CODE=:$"
 
 REM *** Creating %%! and %%^ for defining the $lib.macrodefine.free in a safe way
-REM *** This macro is usd for defining delayed-independent macros
+REM *** The definition is independent of the current delayed expansion mode
+REM *** This macro is used later for defining delayed-independent macros
+REM *** When using the macro %$lib.macrodefine.free%  ...
+REM *** then %%! contains a single !
+REM *** %%^ creates a single ^, but it contains "^" in DDE or "^^!=!" in EDE mode
 FOR /F "tokens=1 delims== " %%! in ("!=! ^^^!") DO ^
 FOR /F %%^^ in ("^ ^^^^%%!=%%!") DO ^
 set ^"$lib.macrodefine.free=@FOR /F "tokens=1 delims== " %%%%! in ("%%!=%%! %%^%%^%%^%%!") DO ^
